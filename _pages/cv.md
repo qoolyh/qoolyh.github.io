@@ -57,7 +57,9 @@ Journal Paper
 Teaching
 ======
   The C Programming Language
+  
   Operating Systems
+  
   Multi-Modal Interactive Media
   
 
