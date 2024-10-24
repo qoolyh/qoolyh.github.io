@@ -46,11 +46,12 @@ Journal Paper
 1. <u>Long, Y.</u>, Luo, X., Zhu, Y., Lee, K. P., & Wang, S. J. (2023). Data transparency design in internet of things: a systematic review. International Journal of Human–Computer Interaction (**IJHCI**), 1-23.
 2. Fang, L., Xing, S. P., Ma, Z., Zhang, Z., <u>Long, Y.</u>, Lee, K. P., & Wang, S. J. (2023). Emo-MG framework: LSTM-based multi-modal emotion detection through electroencephalography signals and micro gestures. International Journal of Human–Computer Interaction (**IJHCI**), 1-17.
 3. Zhu, Y., <u>Long, Y.</u>, Wang, H., Lee, K. P., Zhang, L., & Wang, S. J. (2024). Digital Behavior Change Intervention Designs for Habit Formation: Systematic Review. Journal of Medical Internet Research (JMIR), 26, e54375.
-4. Fang, L., Xing, S. P., <u>Long, Y.</u>, Lee, K. P., & Wang, S. J. (2023). EmoSense: Revealing true emotions through microgestures. Advanced Intelligent Systems, 5(9), 2300050.
-5. <u>Long, Y. H.</u>, Chen, Y. C., Chen, X. P., Shi, X. H., & Zhou, F. (2022). Test-driven feature extraction of web components. Journal of Computer Science and Technology (**JCST**), 37(2), 389-404.
-6. <u>Long, Y.</u>, Chen, X., & Xie, Y. (2020). A data-driven approach for recommending UI element layout. Science China. Information Sciences (**SCIS**), 63(9), 190105.
-7. <u>Long, Y.</u>, Chen, X., & Zhou, F. (2020). AutoWPR: An Automatic Web Page Recoloring Method. International Journal of Software Engineering and Knowledge Engineering (**IJSEKE**), 30(09), 1309-1336.
-8. <u>Long, Y.</u>, Zang, Z., Chen, X., Zhou, F., & Luo, X. (2020). Example-based web page recoloring method. Frontiers of Computer Science (**FCS**), 14(5), 145206.
+4. Zhu, Y., <u>Long, Y.</u>, Wei, L., Zhang, Y., Ma, Z., Lee, K. P., ... & Wang, S. J. (2024). Developing cue-behavior association for habit formation: A qualitative study to explore the role of avatar in hypertension. Digital Health, 10, 20552076241265217.
+5. Fang, L., Xing, S. P., <u>Long, Y.</u>, Lee, K. P., & Wang, S. J. (2023). EmoSense: Revealing true emotions through microgestures. Advanced Intelligent Systems, 5(9), 2300050.
+6. <u>Long, Y. H.</u>, Chen, Y. C., Chen, X. P., Shi, X. H., & Zhou, F. (2022). Test-driven feature extraction of web components. Journal of Computer Science and Technology (**JCST**), 37(2), 389-404.
+7. <u>Long, Y.</u>, Chen, X., & Xie, Y. (2020). A data-driven approach for recommending UI element layout. Science China. Information Sciences (**SCIS**), 63(9), 190105.
+8. <u>Long, Y.</u>, Chen, X., & Zhou, F. (2020). AutoWPR: An Automatic Web Page Recoloring Method. International Journal of Software Engineering and Knowledge Engineering (**IJSEKE**), 30(09), 1309-1336.
+9. <u>Long, Y.</u>, Zang, Z., Chen, X., Zhou, F., & Luo, X. (2020). Example-based web page recoloring method. Frontiers of Computer Science (**FCS**), 14(5), 145206.
 
   
 Teaching
