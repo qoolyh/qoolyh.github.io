@@ -31,6 +31,7 @@ Work experience
 
 Publications
 ======
+
 Confererence Paper
 ------
 1. <u>Long, Y.</u>, Chen, Y., & Chen, X. (2024, October). GUI Test Repair Based on Test-Extension. In Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering (**ASE**), (pp. 2450-2451).
