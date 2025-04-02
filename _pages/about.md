@@ -25,13 +25,15 @@ Conference Paper
 
 Journal Paper
 ------
-1. <u>Long, Y.</u>, Luo, X., Zhu, Y., Lee, K. P., & Wang, S. J. (2023). Data transparency design in internet of things: a systematic review. <i>International Journal of Human–Computer Interaction (**IJHCI**)</i>, 1-23.
-2. Fang, L., Xing, S. P., Ma, Z., Zhang, Z., <u>Long, Y.</u>, Lee, K. P., & Wang, S. J. (2023). Emo-MG framework: LSTM-based multi-modal emotion detection through electroencephalography signals and micro gestures. <i>International Journal of Human–Computer Interaction (**IJHCI**)</i>, 1-17.
-3. Zhu, Y., <u>Long, Y.</u>, Wang, H., Lee, K. P., Zhang, L., & Wang, S. J. (2024). Digital Behavior Change Intervention Designs for Habit Formation: Systematic Review. <i>Journal of Medical Internet Research (**JMIR**)</i>, 26, e54375.
-4. Zhu, Y., <u>Long, Y.</u>, Wei, L., Zhang, Y., Ma, Z., Lee, K. P., ... & Wang, S. J. (2024). Developing cue-behavior association for habit formation: A qualitative study to explore the role of avatar in hypertension. <i>Digital Health</i>, 10, 20552076241265217.
-5. Fang, L., Xing, S. P., <u>Long, Y.</u>, Lee, K. P., & Wang, S. J. (2023). EmoSense: Revealing true emotions through microgestures. <i>Advanced Intelligent Systems</i>, 5(9), 2300050.
-6. <u>Long, Y. H.</u>, Chen, Y. C., Chen, X. P., Shi, X. H., & Zhou, F. (2022). Test-driven feature extraction of web components. <i>Journal of Computer Science and Technology (**JCST**)</i>, 37(2), 389-404.
-7. <u>Long, Y.</u>, Chen, X., & Xie, Y. (2020). A data-driven approach for recommending UI element layout. <i>Science China. Information Sciences (**SCIS**)</i>, 63(9), 190105.
-8. <u>Long, Y.</u>, Chen, X., & Zhou, F. (2020). AutoWPR: An Automatic Web Page Recoloring Method. <i>International Journal of Software Engineering and Knowledge Engineering (**IJSEKE**)</i>, 30(09), 1309-1336.
-9. <u>Long, Y.</u>, Zang, Z., Chen, X., Zhou, F., & Luo, X. (2020). Example-based web page recoloring method. <i>Frontiers of Computer Science (**FCS**)</i>, 14(5), 145206.
+<ol>
+<li> <u>Long, Y.</u>, Luo, X., Zhu, Y., Lee, K. P., & Wang, S. J. (2023). Data transparency design in internet of things: a systematic review. <i>International Journal of Human–Computer Interaction (**IJHCI**)</i>, 1-23.</li>
+<li> Fang, L., Xing, S. P., Ma, Z., Zhang, Z., <u>Long, Y.</u>, Lee, K. P., & Wang, S. J. (2023). Emo-MG framework: LSTM-based multi-modal emotion detection through electroencephalography signals and micro gestures. <i>International Journal of Human–Computer Interaction (**IJHCI**)</i>, 1-17.</li>
+<li> Zhu, Y., <u>Long, Y.</u>, Wang, H., Lee, K. P., Zhang, L., & Wang, S. J. (2024). Digital Behavior Change Intervention Designs for Habit Formation: Systematic Review. <i>Journal of Medical Internet Research (**JMIR**)</i>, 26, e54375.</li>
+<li> Zhu, Y., <u>Long, Y.</u>, Wei, L., Zhang, Y., Ma, Z., Lee, K. P., ... & Wang, S. J. (2024). Developing cue-behavior association for habit formation: A qualitative study to explore the role of avatar in hypertension. <i>Digital Health</i>, 10, 20552076241265217.</li>
+<li> Fang, L., Xing, S. P., <u>Long, Y.</u>, Lee, K. P., & Wang, S. J. (2023). EmoSense: Revealing true emotions through microgestures. <i>Advanced Intelligent Systems</i>, 5(9), 2300050.</li>
+<li> <u>Long, Y. H.</u>, Chen, Y. C., Chen, X. P., Shi, X. H., & Zhou, F. (2022). Test-driven feature extraction of web components. <i>Journal of Computer Science and Technology (**JCST**)</i>, 37(2), 389-404.</li>
+<li> <u>Long, Y.</u>, Chen, X., & Xie, Y. (2020). A data-driven approach for recommending UI element layout. <i>Science China. Information Sciences (**SCIS**)</i>, 63(9), 190105.</li>
+<li> <u>Long, Y.</u>, Chen, X., & Zhou, F. (2020). AutoWPR: An Automatic Web Page Recoloring Method. <i>International Journal of Software Engineering and Knowledge Engineering (**IJSEKE**)</i>, 30(09), 1309-1336.</li>
+<li> <u>Long, Y.</u>, Zang, Z., Chen, X., Zhou, F., & Luo, X. (2020). Example-based web page recoloring method. <i>Frontiers of Computer Science (**FCS**)</i>, 14(5), 145206.</li>
+</ol>
 
