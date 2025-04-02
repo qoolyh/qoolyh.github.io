@@ -14,7 +14,7 @@ Publications
 
 Conference Paper
 ------
-1. <u>Long, Y.</u>, Chen, Y., & Chen, X. (2024, October). GUI Test Repair Based on Test-Extension. In Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering (**ASE**), (pp. 2450-2451).
+1. <u>Long, Y.</u>, Chen, Y., & Chen, X. (2024, October). GUI Test Repair Based on Test-Extension. In <i>Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering (**ASE**)</i>, (pp. 2450-2451).
 2. Liu, L., Yang, S., Wang, Y., Ma, Z., Fang, L., <u>Long, Y.</u>, & Wang, S. J. (2023, October). Robotic Systems in Heritage Protection: An Anti-Fatigue Human-Robot Collaboration Exploration for Heritage Painting and Calligraphy Restoration. In Companion Publication of the 2023 Conference on Computer Supported Cooperative Work and Social Computing (**CSCW**), (pp. 201-205).
 3. X. Chen, Y. Chen, <u>Y. Long</u>, Y. Rao, H. Guan and M. Lin, "Online Educational Resources Classification Using Visual Features," 2018 7th International Conference on Digital Home (**ICDH**), Guilin, China, 2018, pp. 167-171, doi: 10.1109/ICDH.2018.00038.
 4. Huang, R., <u>Long, Y.</u>, & Chen, X. (2016). Automaticly Generating Web Page From A Mockup. In **SEKE** (pp. 589-594).
