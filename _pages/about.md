@@ -8,7 +8,7 @@ redirect_from:
 ---
 Yonghao Long received his B.S in Software Engineering from South China University of Technology. He obtained his M.S. and Ph.D. degree in Computer Science and Technology from Sun Yat-Sen University, under the supervision of [Prof. Xiaonan Luo](https://www.guet.edu.cn/people2/1130199.html) and [Prof. Fan Zhou](https://cse.sysu.edu.cn/content/2531). After that, he spent two years at the Hong Kong Polytechnic University as a post-doctoral research fellow advised by [Prof. Stephen Jia Wang](https://www.polyu.edu.hk/sd/people/academic-staff/wang-stephen-jia/). His current research interests include Intelligent Interaction Design, Human-Computer Interaction, Privacy Design, Software Test, and Software Engineering. 
 
-<span style="color:red">Looking for highly motivated graduate students in the areas of HCI, Software Engineering, and Interaction Design. Please contact me if you have interests.</span>
+<font color='red'> Looking for highly motivated graduate students in the areas of HCI, Software Engineering, and Interaction Design. Please contact me if you have interests. </font>
 
 Publications
 ======
