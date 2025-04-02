@@ -26,6 +26,8 @@ Conference Paper
 Journal Paper
 ------
 <ol>
+<li><u>Y. Long</u>, Y. Chen, C. Zeng, X. Chen, X. Chen, J. Yang, X. Zhou, G. Huang, and Z. Zheng (2025). ExtRep: A GUI Test Repair Method for Mobile Applications Based on Test-Extension. <i>Automated Software Engineering</i>. (Accepted)</li>
+<li> Fang, C., Zhu, Y., Fang, <u>L., Long</u>, Y., Lin, H., Cong, Y., & Wang, S. J. (2025). Generative AI-enhanced human-AI collaborative conceptual design: A systematic literature review. Design Studies, 97, 101300.</li>
 <li> <u>Long, Y.</u>, Luo, X., Zhu, Y., Lee, K. P., & Wang, S. J. (2023). Data transparency design in internet of things: a systematic review. <i>International Journal of Human–Computer Interaction (**IJHCI**)</i>, 1-23.</li>
 <li> Fang, L., Xing, S. P., Ma, Z., Zhang, Z., <u>Long, Y.</u>, Lee, K. P., & Wang, S. J. (2023). Emo-MG framework: LSTM-based multi-modal emotion detection through electroencephalography signals and micro gestures. <i>International Journal of Human–Computer Interaction (**IJHCI**)</i>, 1-17.</li>
 <li> Zhu, Y., <u>Long, Y.</u>, Wang, H., Lee, K. P., Zhang, L., & Wang, S. J. (2024). Digital Behavior Change Intervention Designs for Habit Formation: Systematic Review. <i>Journal of Medical Internet Research (**JMIR**)</i>, 26, e54375.</li>
