@@ -16,7 +16,8 @@ Publications
 Conference Paper
 ------
 <ol>
-<li> Y. Zhu, M. Zhang, C. Fang, L. Fang, <u>Y. Long</u>, K.P. Lee, L. Zhang, and S. J. Wang (2025). AI Doctor for ASD: Physician Perceptions and Adoption Challenges in Autism Clinical Practice. In <i> <b>CSCW’25</b> </i>, pp. 1-27, 2025 (Accepted)</li>
+<li> Y. Zhu, M. Zhang, C. Fang, L. Fang, <u>Y. Long</u>, K.P. Lee, L. Zhang, and S. J. Wang (2025). AI Doctor for ASD: Physician Perceptions and Adoption Challenges in Autism Clinical Practice. In Proceedings of the ACM on Human-Computer Interaction <i> <b>CSCW’25</b> </i>, Volume 9, Issue 2
+Article No.: CSCW027, Pages 1 - 28.</li>
 <li> <u>Long, Y.</u>, Chen, Y., & Chen, X. (2024, October). GUI Test Repair Based on Test-Extension. In <i>Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering (<b>ASE</b>) </i>, (pp. 2450-2451).</li>
 <li> Liu, L., Yang, S., Wang, Y., Ma, Z., Fang, L., <u>Long, Y.</u>, & Wang, S. J. (2023, October). Robotic Systems in Heritage Protection: An Anti-Fatigue Human-Robot Collaboration Exploration for Heritage Painting and Calligraphy Restoration. In <i>Companion Publication of the 2023 Conference on Computer Supported Cooperative Work and Social Computing (<b>CSCW</b>)</i>, (pp. 201-205).</li>
 <li> X. Chen, Y. Chen, <u>Y. Long</u>, Y. Rao, H. Guan and M. Lin, "Online Educational Resources Classification Using Visual Features," <i>2018 7th International Conference on Digital Home (<b>ICDH</b>)</i>, Guilin, China, 2018, pp. 167-171, doi: 10.1109/ICDH.2018.00038.</li>
