@@ -42,3 +42,11 @@ Journal Paper
 <li> <u>Long, Y.</u>, Zang, Z., Chen, X., Zhou, F., & Luo, X. (2020). Example-based web page recoloring method. <i>Frontiers of Computer Science (<b>FCS</b>)</i>, 14(5), 145206.</li>
 </ol>
 
+Research Grants
+======
+<ol>
+<li>National Natural Science Foundation of China, 2026-2028, <b>PI</b></li>
+<li>Enhancing Data-Privacy Awareness in AIoT-related User Experience Design, SD/COMP Joint Research Scheme, The Hong Kong Polytechnic University, 2022-2024, <b>Co-I</b></li>
+<li>AIoT-Enabled Explanations for Healthcare: An Exploration on User Acceptance & Trust, Projects of PolyU RIAIoT, The Hong Kong Polytechnic University, 2022-2024, <b>Co-I</b></li>
+<li>Smart Traffic Fund, An Empathetic Navigation System Design Based on Drivers’ Emotion Inference from Traffic Contextual Data, HK Government, HKSAR and Hong Kong Productivity Council, 2024-2026, <b>Co-I</b></li>
+</ol>
