@@ -8,7 +8,7 @@ redirect_from:
 ---
 Yonghao Long received his B.S in Software Engineering from South China University of Technology. He obtained his M.S. and Ph.D. degree in Computer Science and Technology from Sun Yat-Sen University, under the supervision of [Prof. Xiaonan Luo](https://www.sysu.edu.cn/info/4351/7521.htm) and [Prof. Fan Zhou](https://cse.sysu.edu.cn/teacher/ZhouFan). After that, he spent two years at the Hong Kong Polytechnic University as a post-doctoral research fellow advised by [Prof. Stephen Jia Wang](https://www.polyu.edu.hk/sd/people/academic-staff/wang-stephen-jia/). His current research interests include Intelligent Interaction Design, Human-Computer Interaction, Privacy Design, Software Test, and Software Engineering. 
 
-<font color='red'> Looking for highly motivated graduate students in the areas of HCI, Software Engineering, and Interaction Design. Please contact me if you have interests. </font>
+<font color='red'> Looking for highly motivated graduate students in the areas of HCI, Software Engineering, and Interaction Design. Please contact me (yonghao.long@gdut.edu.cn) if you have interests. </font>
 
 Publications
 ======
@@ -29,6 +29,7 @@ Article No.: CSCW027, Pages 1 - 28.</li>
 Journal Paper
 ------
 <ol>
+<li><u>Y. Long</u>, Y. Long, M. Zhang, C. Hei, X. Luo, K. P. Lee and S. J. Wang. (2026). "PriLens: An AR-Based Privacy Visualization and Control Platform Design For Transparency Enhancing in Smart Home," <i>IEEE Internet of Things Journal</i>, doi: 10.1109/JIOT.2026.3675374. (Accepted) </li>
 <li><u>Y. Long</u>, Y. Chen, C. Zeng, X. Chen, X. Chen, J. Yang, X. Zhou, G. Huang, and Z. Zheng (2025). ExtRep: A GUI Test Repair Method for Mobile Applications Based on Test-Extension. <i>Automated Software Engineering (<b>ASE</b>)</i> 32, 43:1-32.</li>
 <li> Fang, C., Zhu, Y., Fang, <u>L., Long</u>, Y., Lin, H., Cong, Y., & Wang, S. J. (2025). Generative AI-enhanced human-AI collaborative conceptual design: A systematic literature review. <i>Design Studies</i>, 97, 101300.</li>
 <li> <u>Long, Y.</u>, Luo, X., Zhu, Y., Lee, K. P., & Wang, S. J. (2023). Data transparency design in internet of things: a systematic review. <i>International Journal of Human–Computer Interaction (<b>IJHCI</b>)</i>, 40(18), 5003-5025.</li>
