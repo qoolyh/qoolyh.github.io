@@ -26,7 +26,7 @@ jobs:
         run: ls -R scripts/ # 这行用来检查 scripts 文件夹里到底有没有文件
 
       - name: Run fetch script
-        run: python scripts/fetch_scholar.py
+        run: python3 scripts/fetch_scholar.py
 
       - name: Commit and push if changed
         uses: stefanzweifel/git-auto-commit-action@v5
