@@ -1,0 +1,13 @@
+---
+title: "Automatic color modification for web page based on partitional color transfer"
+collection: publications
+category: manuscripts
+permalink: /publication/2015-01-01-automatic-color-modification-for-web-page-based-on
+excerpt: 'Designing or modifying the color of a website is a time-consuming and difficult task for most software engineers. The idea of this paper is inspired by the color transfer methods proposed for automatically alter an image’s color during image processing. The color of a web page can be modified by reusing color characteristic of a reference page. However, a web page cannot be simply viewed as an image because it has structure and constraints for color modifying. In this paper, we propose an approach for automatic color modification of web page based on partitional color transfer. Our approach starts from the clustering of visible UI elements for page partition. And then, elements in the source page are color transferred with their matched elements in the reference page. Our approach automatically modifies the color of web pages based on the color transfer result. We generate 72 modified web pages to evaluate the page structure preserving and color characteristic transformation result of our approach.'
+date: 2015-01-01
+venue: 'International Conference on Software Reuse'
+paperurl: 'https://link.springer.com/chapter/10.1007/978-3-319-14130-5_15'
+citation: 'Xiangping Chen, Yonghao Long & Xiaonan Luo. "Automatic color modification for web page based on partitional color transfer". <i>International Conference on Software Reuse</i>.'
+---
+
+Designing or modifying the color of a website is a time-consuming and difficult task for most software engineers. The idea of this paper is inspired by the color transfer methods proposed for automatically alter an image’s color during image processing. The color of a web page can be modified by reusing color characteristic of a reference page. However, a web page cannot be simply viewed as an image because it has structure and constraints for color modifying. In this paper, we propose an approach for automatic color modification of web page based on partitional color transfer. Our approach starts from the clustering of visible UI elements for page partition. And then, elements in the source page are color transferred with their matched elements in the reference page. Our approach automatically modifies the color of web pages based on the color transfer result. We generate 72 modified web pages to evaluate the page structure preserving and color characteristic transformation result of our approach.
