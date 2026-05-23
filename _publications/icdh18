@@ -1,0 +1,13 @@
+---
+title: "Online Educational Resources Classification Using Visual Features"
+collection: publications
+category: manuscripts
+permalink: /publication/2018-01-01-online-educational-resources-classification-using-
+excerpt: 'With the promotion of the Internet, people can easily retrieve various kinds of education resources on the web. However, current education resources sharing platforms do not support the resources retrieval through the visual information. Therefore, we need to classify the resources which are related to visual characteristics into several categories. In this paper, we propose a novel classification method for resources on Netpad[ http://www.netpad.net.cn/]. We extract the important visual features including graphics features and text features. Then, we use the random forest algorithm to train a valuable model. The results of the experiments indicate that, using graphics features and text features, most of the data are classified correctly, which means that our proposed method can solve the classification problem of Netpad effectively.'
+date: 2018-01-01
+venue: '2018 7th International Conference on Digital Home (ICDH)'
+paperurl: 'https://ieeexplore.ieee.org/document/8634698'
+citation: 'X. Chen, Y. Chen, Y. Long, Y. Rao, H. Guan and M. Lin(2018). "Online Educational Resources Classification Using Visual Features". <i>2018 7th International Conference on Digital Home (ICDH)</i>.'
+---
+
+With the promotion of the Internet, people can easily retrieve various kinds of education resources on the web. However, current education resources sharing platforms do not support the resources retrieval through the visual information. Therefore, we need to classify the resources which are related to visual characteristics into several categories. In this paper, we propose a novel classification method for resources on Netpad[ http://www.netpad.net.cn/]. We extract the important visual features including graphics features and text features. Then, we use the random forest algorithm to train a valuable model. The results of the experiments indicate that, using graphics features and text features, most of the data are classified correctly, which means that our proposed method can solve the classification problem of Netpad effectively.
