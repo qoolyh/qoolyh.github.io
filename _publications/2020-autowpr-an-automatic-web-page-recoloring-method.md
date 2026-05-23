@@ -1,12 +1,13 @@
 ---
 title: "AutoWPR: An Automatic Web Page Recoloring Method"
 collection: publications
-permalink: /publication/2020-autowpr-an-automatic-web-page-recoloring-method
-excerpt: 'No abstract available....'
-date: 2020-01-01
 category: manuscripts
+permalink: /publication/2020-01-01-autowpr-an-automatic-web-page-recoloring-method
+excerpt: 'The color design is one of the important parts of GUI development. To gain an attractive color scheme, designers often seek inspiration from examples. However, transferring an example’s colors to a target web page is time-consuming and tedious. In this paper, we propose a method named AutoWPR to reuse the example web page’s colors for recoloring a web page. To preserve the semantic relations of web elements, we propose a clustering algorithm to group the related elements into a cluster. In order to make the recoloring result have similar color distributions to the example, we use the Random–Forest regression to learn human’s mappings and propose a top-down matching algorithm to generate a mapping between two web pages’ clusters. Then AutoWPR recolors the element with the matching element’s colors. We designed several experiments to evaluate the correctness of the clustering and matching algorithm. We also conducted some qualitative and quantitative experiments to evaluate the effectiveness of our results in helping recoloring. The results show that our method can generate a human-like recoloring result and help novice developers reuse the reference web page’s colors conveniently.'
+date: 2020-01-01
 venue: 'International Journal of Software Engineering and Knowledge Engineering'
-paperurl: '#'
-citation: 'Unknown Author (2020). AutoWPR: An Automatic Web Page Recoloring Method. <i>International Journal of Software Engineering and Knowledge Engineering</i>.'
+paperurl: 'https://www.worldscientific.com/doi/abs/10.1142/S0218194020500369'
+citation: 'Y. Long, X. Chen, and F. Zhou (2020). "AutoWPR: An Automatic Web Page Recoloring Method". <i>International Journal of Software Engineering and Knowledge Engineering</i>.'
 ---
-No abstract available.
+
+The color design is one of the important parts of GUI development. To gain an attractive color scheme, designers often seek inspiration from examples. However, transferring an example’s colors to a target web page is time-consuming and tedious. In this paper, we propose a method named AutoWPR to reuse the example web page’s colors for recoloring a web page. To preserve the semantic relations of web elements, we propose a clustering algorithm to group the related elements into a cluster. In order to make the recoloring result have similar color distributions to the example, we use the Random–Forest regression to learn human’s mappings and propose a top-down matching algorithm to generate a mapping between two web pages’ clusters. Then AutoWPR recolors the element with the matching element’s colors. We designed several experiments to evaluate the correctness of the clustering and matching algorithm. We also conducted some qualitative and quantitative experiments to evaluate the effectiveness of our results in helping recoloring. The results show that our method can generate a human-like recoloring result and help novice developers reuse the reference web page’s colors conveniently.
