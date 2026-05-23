@@ -8,3 +8,5 @@ main:
     
   - title: "CV"
     url: /cv/
+- name: Publications
+    url: /publications/
