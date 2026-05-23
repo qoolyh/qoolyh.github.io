@@ -17,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10' 
+          python-version: '3.10' # 明确指定一个版本，比 '3.x' 更稳定
 
       - name: Install dependencies
         run: pip install scholarly requests lxml
@@ -26,7 +26,7 @@ jobs:
         run: ls -R scripts/ # 这行用来检查 scripts 文件夹里到底有没有文件
 
       - name: Run fetch script
-        run: python fetch_scholar.py
+        run: python scripts/fetch_scholar.py
 
       - name: Commit and push if changed
         uses: stefanzweifel/git-auto-commit-action@v5
