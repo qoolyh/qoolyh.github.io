@@ -1,45 +1,74 @@
 #!/usr/bin/env python3
 import os
-import sys
-import signal
-from scholarly import scholarly
-import time
-import urllib.request
+import requests
+from datetime import datetime
 
-# --- 配置区 ---
-AUTHOR_ID = "PF-BShoAAAAJ" 
+# --- 1. 配置区：填入你自己的 ORCID ID ---
+ORCID_ID = "0000-0003-1808-9579"  # <--- 改成你自己的 ORCID ID
 OUTPUT_DIR = "_publications"
-MAX_PAPERS = 10 
-# --- 配置区结束 ---
-
-# 1. 设置全局超时（防止网络请求无限等待）
-def timeout_handler(signum, frame):
-    raise TimeoutError("Network request timed out!")
-signal.signal(signal.SIGALRM, timeout_handler)
+MAX_PAPERS = 10
+# ---------------------------------------
 
 def sanitize_filename(title):
+    """清理文件名，移除特殊字符"""
     return "".join(c if c.isalnum() or c in (' ', '-', '_') else '' for c in title).rstrip()
 
-def generate_jekyll_markdown(pub):
+def generate_jekyll_markdown(work):
+    """将 ORCID 的论文数据转换为 Academic Pages 的 Markdown 格式"""
     try:
-        title = pub.get('bib', {}).get('title', 'No Title')
-        author = pub.get('bib', {}).get('author', 'Unknown Author')
-        year = pub.get('bib', {}).get('year', 'N/A')
-        journal = pub.get('bib', {}).get('journal', 'Preprint' if 'arxiv' in str(pub.get('pub_url', '')).lower() else 'Conference/Journal')
-        abstract = pub.get('bib', {}).get('abstract', '')
-        url = pub.get('pub_url', pub.get('eprint_url', '#'))
+        # 提取基本信息
+        title = work.get('title', {}).get('title', {}).get('value', 'No Title')
         
-        date_str = f"{year}-01-01"
-        if len(date_str) != 10:
-            date_str = f"{year}-01-01"
+        # 提取年份
+        year_str = None
+        if work.get('publication-date') and work['publication-date'].get('year'):
+            year_str = str(work['publication-date']['year']['value'])
+        else:
+            year_str = "1900" # 如果没有年份，默认一个
         
-        filename = f"{date_str}-{sanitize_filename(title)[:50].replace(' ', '-').lower()}.md"
+        # 构建日期字符串
+        date_str = f"{year_str}-01-01"
+        
+        # 提取期刊/会议名称
+        journal = "N/A"
+        if work.get('journal-title'):
+            journal = work['journal-title'].get('value', 'N/A')
+        
+        # 提取作者列表
+        authors = []
+        for contrib in work.get('contributors', {}).get('contributor', []):
+            if contrib.get('credit-name') and contrib['credit-name'].get('value'):
+                authors.append(contrib['credit-name']['value'])
+        author_str = ", ".join(authors) if authors else "Unknown Author"
+        
+        # 提取外部链接 (DOI 或 URL)
+        ext_ids = work.get('external-ids', {}).get('external-id', [])
+        url = "#"
+        doi = None
+        for ext_id in ext_ids:
+            if ext_id.get('external-id-type') == 'doi':
+                doi = ext_id.get('external-id-value')
+                url = f"https://doi.org/{doi}"
+                break
+            elif ext_id.get('external-id-type') == 'uri':
+                url = ext_id.get('external-id-value')
+        
+        # 提取摘要 (ORCID 的摘要通常在 here 或 summary 里，视具体情况而定)
+        abstract = "No abstract available."
+        # 尝试从 full-text 获取，如果是 None 则保持默认
+        if work.get('short-description'):
+            abstract = work['short-description']
+
+        # 构建文件名
+        filename = f"{year_str}-{sanitize_filename(title)[:50].replace(' ', '-').lower()}.md"
         filepath = os.path.join(OUTPUT_DIR, filename)
 
+        # 检查文件是否已存在
         if os.path.exists(filepath):
             print(f"Skipping existing file: {filename}")
             return
 
+        # Academic Pages 的 Front Matter 格式
         content = f"""---
 title: "{title}"
 collection: publications
@@ -48,72 +77,63 @@ excerpt: '{abstract[:150]}...'
 date: {date_str}
 venue: '{journal}'
 paperurl: '{url}'
-citation: '{author}, et al. ({year}). {title}. <i>{journal}</i>.'
+citation: '{author_str} ({year_str}). {title}. <i>{journal}</i>.'
 ---
 {abstract}
 """
+        
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(content)
+        
         print(f"Generated: {filename}")
     except Exception as e:
-        print(f"Error writing file for {pub.get('bib', {}).get('title', 'N/A')}: {e}")
+        print(f"Error processing paper '{title}': {e}")
 
 def main():
-    print(f"Fetching author info for ID: {AUTHOR_ID}")
+    print(f"Fetching publications for ORCID: {ORCID_ID}")
     
-    # 2. 测试网络连通性（可选，帮助诊断）
-    try:
-        print("Testing network connection to Google...")
-        urllib.request.urlopen('https://scholar.google.com', timeout=10)
-        print("Network seems OK.")
-    except Exception as e:
-        print(f"Warning: Network test failed: {e}")
+    # ORCID Public API v3.0 端点
+    url = f"https://pub.orcid.org/v3.0/{ORCID_ID}/works"
+    headers = {"Accept": "application/json"}
+    
+    response = requests.get(url, headers=headers)
+    
+    if response.status_code != 200:
+        print(f"Error fetching data from ORCID: {response.status_code}")
+        return
+        
+    data = response.json()
+    
+    # 确保输出目录存在
+    if not os.path.exists(OUTPUT_DIR):
+        os.makedirs(OUTPUT_DIR)
+    
+    works = data.get('group', [])
+    # 按年份降序排列，确保最新的论文在前
+    works.sort(key=lambda x: (
+        x.get('work-summary', [{}])[0].get('publication-date', {}).get('year', {}).get('value', 0) 
+        if x.get('work-summary') else 0
+    ), reverse=True)
 
-    try:
-        # 3. 设置超时（例如 60 秒）
-        signal.alarm(60) 
+    count = 0
+    for work_group in works[:MAX_PAPERS]:
+        # 获取详细的 work 信息
+        work_summary = work_group.get('work-summary', [{}])[0]
+        work_url = work_summary.get('source') # 这个实际上是 /works/{put-code} 的相对路径
         
-        print("Searching author...")
-        author = scholarly.search_author_id(AUTHOR_ID)
-        
-        print("Filling author details...")
-        author = scholarly.fill(author, sections=['publications'])
-        
-        signal.alarm(0) # 取消超时
-        
-        print(f"Author: {author.get('name')}")
-        print(f"Total publications found: {len(author.get('publications', []))}")
-        
-        if not os.path.exists(OUTPUT_DIR):
-            os.makedirs(OUTPUT_DIR)
+        if work_url:
+            # 拼接获取单篇论文详情的 API 地址
+            detail_url = f"https://pub.orcid.org/v3.0/{ORCID_ID}{work_url}"
+            detail_response = requests.get(detail_url, headers=headers)
             
-        count = 0
-        for pub in author.get('publications', [])[:MAX_PAPERS]:
-            try:
-                # 每次请求也设个短超时
-                signal.alarm(30)
-                filled_pub = scholarly.fill(pub)
-                signal.alarm(0)
-                
-                generate_jekyll_markdown(filled_pub)
+            if detail_response.status_code == 200:
+                work_detail = detail_response.json()
+                generate_jekyll_markdown(work_detail)
                 count += 1
-                time.sleep(3) 
-            except TimeoutError:
-                print(f"Timeout processing paper: {pub.get('bib', {}).get('title', 'N/A')}. Skipping.")
-                signal.alarm(0)
-                continue
-            except Exception as e:
-                print(f"Error processing paper: {pub.get('bib', {}).get('title', 'N/A')}. Error: {e}")
-                continue
-                
-        print(f"Successfully generated {count} new papers.")
-        
-    except TimeoutError:
-        print("Fatal: The request to Google Scholar timed out. This usually means the IP is blocked or captcha is required.")
-        sys.exit(1)
-    except Exception as e:
-        print(f"Failed to fetch data from Google Scholar: {e}")
-        sys.exit(1)
+            else:
+                print(f"Failed to fetch details for a paper. Status code: {detail_response.status_code}")
+
+    print(f"Successfully generated {count} papers.")
 
 if __name__ == "__main__":
     main()
