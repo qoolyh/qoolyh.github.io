@@ -1,0 +1,13 @@
+---
+title: "Towards Automatic Content Transfer between Web Pages"
+collection: publications
+category: manuscripts
+permalink: /publication/2016-01-01-towards-automatic-content-transfer-between-web-pag
+excerpt: 'The Internet provides numerous web pages for learning and reusing. But reusing these pages requires manually modification and integration of the source codes, which is inefficient and complex. In this paper, we propose a method to do the content transfer between web pages. This method is based on the machine-learning, and it can use any web to be the templates. With transferring the contents from source to the reference, a web page is synthesized with the source's contents and reference's styles. The result can help inspiring the designers and reducing the developing cost.'
+date: 2016-01-01
+venue: '2016 6th International Conference on Digital Home (ICDH)'
+paperurl: 'https://ieeexplore.ieee.org/abstract/document/8039091'
+citation: 'Y. Long, X. Chen, Y. Rao and X. Shi (2016). "Towards Automatic Content Transfer between Web Pages". <i>2016 6th International Conference on Digital Home (ICDH)</i>.'
+---
+
+The Internet provides numerous web pages for learning and reusing. But reusing these pages requires manually modification and integration of the source codes, which is inefficient and complex. In this paper, we propose a method to do the content transfer between web pages. This method is based on the machine-learning, and it can use any web to be the templates. With transferring the contents from source to the reference, a web page is synthesized with the source's contents and reference's styles. The result can help inspiring the designers and reducing the developing cost.
