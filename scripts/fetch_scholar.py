@@ -1,95 +1,15 @@
 #!/usr/bin/env python3
 import os
 import requests
+import time
 
 # --- 配置区 ---
-ORCID_ID = "0000-0003-1808-9579"  # 记得改成你自己的 ORCID ID
+ORCID_ID = "0000-0003-1808-9579"  # 你的ORCID ID
 OUTPUT_DIR = "_publications"
-MAX_PAPERS = 15  # 可以多抓几篇，防止有的因为数据不全被跳过
+MAX_PAPERS = 15
 
 
 # ----------
-
-def sanitize_filename(title):
-    return "".join(c if c.isalnum() or c in (' ', '-', '_') else '' for c in title).rstrip()
-
-
-def safe_get(data, *keys, default=None):
-    """
-    安全地获取嵌套字典的值，防止 NoneType 报错
-    """
-    for key in keys:
-        try:
-            data = data[key]
-        except (KeyError, TypeError, AttributeError):
-            return default
-    return data if data is not None else default
-
-
-def extract_work_info(work_summary):
-    try:
-        # 1. 提取标题 (加强保护)
-        title = safe_get(work_summary, "title", "title", "value", default="").strip()
-        if not title:
-            print("   ⚠️ 标题为空，跳过")
-            return None
-
-        # 2. 提取年份 (加强保护)
-        year_val = safe_get(work_summary, "publication-date", "year", "value", default=None)
-        if year_val:
-            year_str = str(year_val)
-        else:
-            # 如果年份真的没有，尝试从其他字段猜，或者给个默认
-            print(f"   ⚠️ 未找到年份，默认为 1900: {title}")
-            year_str = "1900"
-
-        # 3. 提取期刊/类型
-        journal = safe_get(work_summary, "journal-title", "value", default="").strip()
-        if not journal:
-            work_type = safe_get(work_summary, "type", default="").lower()
-            journal = "Preprint" if "preprint" in work_type else "Conference/Journal"
-
-        # 4. 提取 URL/DOI
-        url = "#"
-        external_ids = safe_get(work_summary, "external-ids", "external-id", default=[])
-        for ext_id in external_ids:
-            id_type = safe_get(ext_id, "external-id-type", default="")
-            id_value = safe_get(ext_id, "external-id-value", default="")
-            if id_type == "doi" and id_value:
-                url = f"https://doi.org/{id_value}"
-                break
-            elif id_type == "uri" and id_value:
-                url = id_value
-
-        # 5. 提取作者 (取前3个)
-        contributors_list = safe_get(work_summary, "contributors", "contributor", default=[])
-        authors = []
-        for contrib in contributors_list[:3]:
-            name = safe_get(contrib, "credit-name", "value", default="").strip()
-            if name:
-                authors.append(name)
-
-        if not authors:
-            author_str = "Unknown Author"
-        else:
-            author_str = "; ".join(authors) + (" et al." if len(contributors_list) > 3 else "")
-
-        # 6. 摘要
-        abstract = safe_get(work_summary, "short-description", default="No abstract available.").strip()
-
-        return {
-            "title": title,
-            "year": year_str,
-            "journal": journal,
-            "url": url,
-            "author_str": author_str,
-            "abstract": abstract
-        }
-
-    except Exception as e:
-        print(f"   ❌ 解析出错: {e}")
-        return None
-
 
 def generate_jekyll_markdown(work_info):
     title = work_info["title"]
@@ -122,8 +42,103 @@ citation: '{author_str} ({year}). {title}. <i>{journal}</i>.'
 
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(content)
-    print(f"   ✅ 生成: {filename}")
+    #print(f"   ✅ 生成: {filename}")
     return True
+
+
+def sanitize_filename(title):
+    return "".join(c if c.isalnum() or c in (' ', '-', '_') else '' for c in title).rstrip()
+
+
+def safe_get(data, *keys, default=None):
+    for key in keys:
+        try:
+            data = data[key]
+        except (KeyError, TypeError, AttributeError):
+            return default
+    return data if data is not None else default
+
+
+def get_work_details(put_code):
+    """获取单篇论文的详细信息（含作者）"""
+    # 构造详情页 API 地址
+    detail_url = f"https://pub.orcid.org/v3.0/{ORCID_ID}/work/{put_code}"
+    headers = {"Accept": "application/json"}
+    try:
+        response = requests.get(detail_url, headers=headers, timeout=10)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            print(f"      ⚠️ 获取详情失败，状态码: {response.status_code}")
+            return None
+    except Exception as e:
+        print(f"      ❌ 请求详情异常: {e}")
+        return None
+
+
+def extract_work_info(work_summary):
+    try:
+        put_code = safe_get(work_summary, "put-code", default=None)
+        title = safe_get(work_summary, "title", "title", "value", default="").strip()
+        if not title:
+            return None
+
+        # 基础信息提取
+        year_val = safe_get(work_summary, "publication-date", "year", "value", default=None)
+        year_str = str(year_val) if year_val else "1900"
+        journal = safe_get(work_summary, "journal-title", "value", default="").strip()
+        if not journal:
+            work_type = safe_get(work_summary, "type", default="").lower()
+            journal = "Preprint" if "preprint" in work_type else "Conference/Journal"
+
+        url = "#"
+        external_ids = safe_get(work_summary, "external-ids", "external-id", default=[])
+        for ext_id in external_ids:
+            if safe_get(ext_id, "external-id-type") == "doi":
+                url = f"https://doi.org/{safe_get(ext_id, 'external-id-value')}"
+                break
+
+        # --- 关键步骤：获取作者 ---
+        # 1. 先尝试从 summary 拿（可能没有）
+        contributors_list = safe_get(work_summary, "contributors", "contributor", default=[])
+
+        # 2. 如果没有作者，且我们有 put-code，就去请求详情接口
+        if not contributors_list and put_code:
+            print(f"      ℹ️ Summary 无作者，正在请求详情接口...")
+            detail_data = get_work_details(put_code)
+            if detail_data:
+                contributors_list = safe_get(detail_data, "contributors", "contributor", default=[])
+                # 详情接口也可能没有，那就算了
+                if not contributors_list:
+                    print(f"      ⚠️ 详情接口也未包含作者信息")
+
+        # 3. 格式化作者字符串
+        authors = []
+        if contributors_list:
+            for contrib in contributors_list[:5]:  # 取前5个
+                name = safe_get(contrib, "credit-name", "value", default="").strip()
+                if name:
+                    authors.append(name)
+
+        if authors:
+            author_str = "; ".join(authors) + (" et al." if len(contributors_list) > 5 else "")
+        else:
+            author_str = "Unknown Author"  # 实在没有就用 Unknown
+
+        abstract = safe_get(work_summary, "short-description", default="No abstract available.").strip()
+
+        return {
+            "title": title,
+            "year": year_str,
+            "journal": journal,
+            "url": url,
+            "author_str": author_str,
+            "abstract": abstract
+        }
+
+    except Exception as e:
+        print(f"   ❌ 解析出错: {e}")
+        return None
 
 
 def main():
@@ -154,14 +169,18 @@ def main():
 
         work_summary = work_summaries[0]
         display_title = safe_get(work_summary, "title", "title", "value", default="未知标题")
-        print(f"🔍 [{i + 1}/{MAX_PAPERS}] 处理: {display_title}")
+        print(f"🔍 [{i + 1}/{MAX_PAPERS}] {display_title}")
 
         work_info = extract_work_info(work_summary)
         if not work_info:
             continue
 
+        # 生成 Markdown (复用你之前的 generate_jekyll_markdown 函数)
         if generate_jekyll_markdown(work_info):
             count += 1
+
+        # 礼貌性延迟，防止被 ORCID 限流
+        time.sleep(1)
 
     print(f"\n🎉 完成！本次新增 {count} 篇论文。")
 
