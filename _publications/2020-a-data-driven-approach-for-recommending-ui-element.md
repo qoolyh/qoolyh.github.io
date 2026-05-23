@@ -1,14 +1,13 @@
 ---
-title: "Paper Title Number 2"
+title: "A data-driven approach for recommending UI element layout"
 collection: publications
 category: manuscripts
-permalink: /publication/2010-10-01-paper-title-number-2
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
-date: 2010-10-01
-venue: 'Journal 1'
-slidesurl: 'https://academicpages.github.io/files/slides2.pdf'
-paperurl: 'https://academicpages.github.io/files/paper2.pdf'
-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+permalink: /publication/2020-01-01-a-data-driven-approach-for-recommending-ui-element
+excerpt: 'We propose an approach to mine layout patterns and recommend the proper placement and size for UI layout implementation.'
+date: 2020-01-01
+venue: 'Science China Information Sciences'
+paperurl: 'https://link.springer.com/article/10.1007/s11432-019-2860-3'
+citation: 'Y. Long, X. Chen, X. Xie (2020). "A data-driven approach for recommending UI element layout". <i>Science China Information Sciences</i>.'
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+We propose an approach to mine layout patterns and recommend the proper placement and size for UI layout implementation. Based on 146942 UI pages collected from 21233 Android apps, our approach could extract the UI element examples to generate a heatmap based on user input. Heuristic rules and edge detection were used to find layout patterns. The experiment results show that our method is effective in recommending valuable layout patterns and the accuracy of our approach needs to be improved.
