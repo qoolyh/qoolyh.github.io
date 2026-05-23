@@ -1,0 +1,34 @@
+name: Update Publications
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天 UTC 0 点自动运行
+  workflow_dispatch:      # 允许手动触发
+
+permissions:
+  contents: write  # 给 GITHUB_TOKEN 赋予写入权限（这是关键！）
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+          
+      - name: Install dependencies
+        # 注意：如果你用的是我上一条回复里的 scholarly 脚本，这里要装 scholarly
+        # 如果你是自己写的 requests 脚本，就保留 requests
+        run: pip install scholarly requests beautifulsoup4 lxml 
+        
+      - name: Run fetch script
+        run: fetch_scholar.py
+        
+      - name: Commit and push if changed
+        uses: stefanzweifel/git-auto-commit-action@v5 # 推荐用这个成熟的 Action 来处理提交
+        with:
+          commit_message: Auto-update publications from Scholar
+          branch: main # 如果你的默认分支是 master，改成 master
